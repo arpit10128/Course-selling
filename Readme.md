@@ -44,7 +44,6 @@ Routes → Controllers → Models → Middleware
 
 - Signup & Login
 - View all courses
-- Purchase course
 - View purchased courses
 - Protected routes using user middleware
 
@@ -52,6 +51,7 @@ Routes → Controllers → Models → Middleware
 
 ## Folder Structure
 
+```
 course-selling-app/
 │
 ├── controllers/
@@ -61,6 +61,7 @@ course-selling-app/
 ├── utils/
 ├── app.js
 └── .env
+```
 
 ---
 
@@ -84,43 +85,17 @@ GET /user/purchased
 
 ---
 
-## Setup Instructions
-
-1. Clone the repository
-
-git clone https://github.com/your-username/course-selling-app.git  
-cd course-selling-app
-
-2. Install dependencies
-
-npm install
-
-3. Create .env file
-
-PORT=5000  
-MONGO_URI=your_mongodb_connection_string  
-JWT_SECRET=your_secret_key
-
-4. Start the server
-
-npm start
-
-Server runs at:
-http://localhost:5000
-
----
-
 ## Current Status
 
 - Authentication working
 - Admin CRUD operations working
-- Purchase system implemented
 - JWT-based authorization implemented
 
 ---
 
 ## Future Improvements
 
+- Purchase course (user feature)
 - Payment integration
 - Course content management
 - Pagination & filtering

@@ -9,16 +9,20 @@ import { updateCourse } from "../controllers/admin/updateCourseController.js";
 import { deleteCourse } from "../controllers/admin/deleteCourseController.js";
 const router = express.Router();
 
-router.post("/admin/auth/signup", adminSignup);
-router.post("/admin/auth/signin", adminLogin);
-router.post("/course", adminMiddleware, createCourse);
+router.post("/admin/signup", adminSignup);
+router.post("/admin/signin", adminLogin);
+router.post(
+  "/admin/courses",
+  adminMiddleware,
+  createCourse,
+);
 router.put(
-  "/courses/:courseId",
+  "/admin/courses/:courseId",
   adminMiddleware,
   updateCourse,
 );
 router.delete(
-  "/courses/:courseId",
+  "admin/courses/:courseId",
   adminMiddleware,
   deleteCourse,
 );
