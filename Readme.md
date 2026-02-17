@@ -60,6 +60,7 @@ course-selling-app/
 ├── routes/
 ├── utils/
 ├── app.js
+├── server.js
 └── .env
 ```
 
