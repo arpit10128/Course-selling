@@ -1,159 +1,132 @@
-🚀 Course Selling App – Backend API
+# Course Selling App – Backend API
 
-A scalable backend API for a course marketplace platform built with Node.js, Express, MongoDB, and JWT authentication.
+A RESTful backend API for a course marketplace platform built using Node.js, Express, MongoDB, and JWT authentication.
 
-Designed with clean architecture, role-based access control, and secure route protection.
+---
 
-📌 Overview
+## Overview
 
-This project is a backend system that allows:
+This project allows:
 
-👨‍💼 Admins to create and manage courses
+- Admins to create, update, and delete courses
+- Users to browse and purchase courses
+- Secure authentication using JWT
+- Role-based route protection using middleware
 
-👤 Users to browse and purchase courses
+The architecture follows clean separation of concerns:
+Routes → Controllers → Models → Middleware
 
-🔐 Secure authentication using JWT
+---
 
-🧩 Proper route separation and middleware structure
+## Tech Stack
 
-The system follows RESTful API design and clean folder organization.
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT (Authentication)
+- dotenv
 
-🏗️ Architecture & Folder Structure
+---
+
+## Features Implemented
+
+### Admin
+
+- Signup & Login
+- Create Course
+- Update Course
+- Delete Course
+- Ownership validation (Admin can modify only their own courses)
+- Protected routes using admin middleware
+
+### User
+
+- Signup & Login
+- View all courses
+- Purchase course
+- View purchased courses
+- Protected routes using user middleware
+
+---
+
+## Folder Structure
 
 course-selling-app/
 │
 ├── controllers/
-│ ├── admin/
-│ ├── user/
-│
 ├── middleware/
-│ ├── adminMiddleware.js
-│ ├── userMiddleware.js
-│
 ├── models/
-│ ├── adminModel.js
-│ ├── userModel.js
-│ ├── courseModel.js
-│ ├── purchaseModel.js
-│
 ├── routes/
-│ ├── adminRoutes.js
-│ ├── userRoutes.js
-│
 ├── utils/
-│ └── jwt.js
-│
 ├── app.js
 └── .env
 
-🔎 Design Highlights
+---
 
-Separation of concerns (Routes → Controllers → Models)
+## API Endpoints
 
-Role-based middleware
+### Admin Routes
 
-RESTful route structure
+POST /admin/signup  
+POST /admin/login  
+POST /admin/courses  
+PUT /admin/courses/:courseId  
+DELETE /admin/courses/:courseId
 
-Ownership validation for course updates/deletes
+### User Routes
 
-Modular and scalable structure
+POST /user/signup  
+POST /user/login  
+GET /user/courses  
+POST /user/purchase  
+GET /user/purchased
 
-🛠️ Tech Stack
+---
 
-Technology Purpose
-Node.js Runtime
-Express.js Backend Framework
-MongoDB Database
-Mongoose ODM
-JWT Authentication
-dotenv Environment config
+## Setup Instructions
 
-🔐 Authentication & Authorization
+1. Clone the repository
 
-JWT issued on login/signup
-
-Middleware verifies token
-
-Separate adminMiddleware and userMiddleware
-
-Admin can only update/delete their own courses
-
-📡 API Endpoints
-
-👨‍💼 Admin Routes
-
-Method Endpoint Description
-POST /admin/signup Register new admin
-POST /admin/login Login admin
-POST /admin/courses Create course
-PUT /admin/courses/:courseId Update course
-DELETE /admin/courses/:courseId Delete course
-
-👤 User Routes
-
-Method Endpoint Description
-POST /user/signup Register user
-POST /user/login Login user
-GET /user/courses View all courses
-POST /user/purchase Purchase a course
-GET /user/purchased View purchased courses
-
-⚙️ Local Setup
-1️⃣ Clone Repository
-git clone https://github.com/your-username/course-selling-app.git
+git clone https://github.com/your-username/course-selling-app.git  
 cd course-selling-app
 
-2️⃣ Install Dependencies
+2. Install dependencies
+
 npm install
 
-3️⃣ Setup Environment Variables
+3. Create .env file
 
-Create .env file:
+PORT=5000  
+MONGO_URI=your_mongodb_connection_string  
+JWT_SECRET=your_secret_key
 
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_super_secret_key
+4. Start the server
 
-4️⃣ Run the Server
 npm start
 
 Server runs at:
-
 http://localhost:5000
 
-🧠 What I Implemented
+---
 
-✔ Admin & User authentication
-✔ JWT token generation & verification
-✔ Protected routes
-✔ CRUD operations for courses
-✔ Ownership validation logic
-✔ Purchase system
-✔ Clean folder restructuring
-✔ RESTful route improvements
+## Current Status
 
-🔮 Planned Improvements
+- Authentication working
+- Admin CRUD operations working
+- Purchase system implemented
+- JWT-based authorization implemented
 
-Payment gateway integration
+---
 
-Course content upload (videos, modules)
+## Future Improvements
 
-Pagination & filtering
+- Payment integration
+- Course content management
+- Pagination & filtering
+- Deployment
+- API documentation
 
-Rate limiting
+---
 
-API documentation (Swagger)
-
-Deployment (Render / AWS / Railway)
-
-Docker support
-
-📈 Project Status
-
-🟢 Core backend complete
-🟡 Scaling & production features pending
-
-👨‍💻 Author
-
-Arpit Saraswat
-Backend Developer | System Design Enthusiast
+Author: Arpit Saraswat
