@@ -7,6 +7,7 @@ import adminMiddleware from "../middleware/adminMiddleware.js";
 import { createCourse } from "../controllers/admin/createCourseController.js";
 import { updateCourse } from "../controllers/admin/updateCourseController.js";
 import { deleteCourse } from "../controllers/admin/deleteCourseController.js";
+
 const router = express.Router();
 
 router.post("/admin/signup", adminSignup);

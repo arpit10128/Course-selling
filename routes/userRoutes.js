@@ -11,7 +11,7 @@ const router = express.Router();
 router.post("/user/signup", signup);
 router.post("/user/login", login);
 router.get("/user/courses", courses);
-router.post("/user/purchases");
+// router.post("/user/purchases");
 router.get("/user/purchased", purchasesController);
 
 export default router;
