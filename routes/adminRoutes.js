@@ -23,7 +23,7 @@ router.put(
   updateCourse,
 );
 router.delete(
-  "admin/courses/:courseId",
+  "/admin/courses/:courseId",
   adminMiddleware,
   deleteCourse,
 );
