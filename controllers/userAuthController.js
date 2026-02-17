@@ -37,7 +37,10 @@ export async function signup(req, res, next) {
     });
 
     //generate token
-    const token = generateToken(user._id);
+    const token = generateToken(
+      user._id,
+      process.env.JWT_USER_SECRET,
+    );
 
     //send response
     res.status(201).json({
@@ -82,7 +85,10 @@ export async function login(req, res, next) {
     }
 
     //generate token
-    const token = generateToken(user._id);
+    const token = generateToken(
+      user._id,
+      process.env.JWT_USER_SECRET,
+    );
 
     //send response
     res.status(200).json({

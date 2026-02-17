@@ -1,14 +1,14 @@
 import jwt from "jsonwebtoken";
 
-export function generateToken(userId) {
+export function generateToken(userId, secret) {
   return jwt.sign(
     {
       userId,
     },
-    process.env.JWT_SECRET,
+    secret,
   );
 }
 
-export function verifyToken(token) {
-  return jwt.verify(token, process.env.JWT_SECRET);
+export function verifyToken(token, secret) {
+  return jwt.verify(token, secret);
 }
