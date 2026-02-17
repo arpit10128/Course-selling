@@ -1,7 +1,6 @@
 import express from "express";
-import userAuthRoutes from "./routes/userAuthRoute.js";
-import adminAuthRoutes from "./routes/adminAuthRoute.js";
-import coursesRoute from "./routes/courseRoute.js";
+import userRoutes from "./routes/userRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
 
 const app = express();
 
@@ -9,9 +8,8 @@ const app = express();
 app.use(express.json());
 
 /* routes */
-app.use("/", userAuthRoutes);
-app.use("/", adminAuthRoutes);
-app.use("/", coursesRoute);
+app.use("/", userRoutes);
+app.use("/", adminRoutes);
 
 /* error handler (always last) */
 

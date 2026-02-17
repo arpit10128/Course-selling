@@ -22,7 +22,7 @@ const coursesSchema = new Schema(
     imgUrl: {
       type: String,
     },
-    cretorId: {
+    creatorId: {
       type: ObjectId,
       ref: "admin",
     },

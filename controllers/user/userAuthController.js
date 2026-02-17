@@ -1,9 +1,9 @@
-import UserModel from "../models/userModel.js";
+import UserModel from "../../models/userModel.js";
 import {
   comparePassword,
   hashPassword,
-} from "../utils/hash.js";
-import { generateToken } from "../utils/jwt.js";
+} from "../../utils/hash.js";
+import { generateToken } from "../../utils/jwt.js";
 
 export async function signup(req, res, next) {
   try {

@@ -1,9 +1,9 @@
-import adminModel from "../models/adminModel.js";
+import adminModel from "../../models/adminModel.js";
 import {
   comparePassword,
   hashPassword,
-} from "../utils/hash.js";
-import { generateToken } from "../utils/jwt.js";
+} from "../../utils/hash.js";
+import { generateToken } from "../../utils/jwt.js";
 
 export async function adminSignup(req, res, next) {
   try {

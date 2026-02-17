@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 export function generateToken(userId, secret) {
   return jwt.sign(
     {
-      userId,
+      id: userId,
     },
     secret,
   );
