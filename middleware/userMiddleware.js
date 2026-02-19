@@ -1,4 +1,4 @@
-import { verifyToken } from "../utils/jwt";
+import { verifyToken } from "../utils/jwt.js";
 
 export default function userMiddleware(req, res, next) {
   const token = req.headers.token;
@@ -9,7 +9,7 @@ export default function userMiddleware(req, res, next) {
   );
 
   if (decode) {
-    req.userId = decode.indexOf;
+    req.userId = decode.id;
     next();
   } else {
     res.status(403).json({

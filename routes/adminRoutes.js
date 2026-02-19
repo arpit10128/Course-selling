@@ -7,6 +7,7 @@ import adminMiddleware from "../middleware/adminMiddleware.js";
 import { createCourse } from "../controllers/admin/createCourseController.js";
 import { updateCourse } from "../controllers/admin/updateCourseController.js";
 import { deleteCourse } from "../controllers/admin/deleteCourseController.js";
+import { bulkCourse } from "../controllers/admin/bulkCourse.js";
 
 const router = express.Router();
 
@@ -26,6 +27,11 @@ router.delete(
   "/admin/courses/:courseId",
   adminMiddleware,
   deleteCourse,
+);
+router.get(
+  "/admin/courses/bulk",
+  adminMiddleware,
+  bulkCourse,
 );
 
 export default router;
